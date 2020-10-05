@@ -27,7 +27,7 @@ client.connect(err => {
 
   app.post('/addActivities', (req, res) => {
     const volunteerActivities = req.body;
-    activitiesCollection.insertMany(volunteerActivities)
+    activitiesCollection.insertOne(volunteerActivities)
     .then(result => {
       console.log(result)
       res.send(result)
