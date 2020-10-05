@@ -90,7 +90,7 @@ client.connect(err => {
   app.delete('/deleteActivity/:id', (req, res) => {
     registerCollection.deleteOne({_id: ObjectId(req.params.id)})
     .then(result => {
-      console.log(result)
+      res.send(result.deletedCount > 0);
     })
   })
 
