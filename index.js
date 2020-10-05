@@ -51,6 +51,13 @@ client.connect(err => {
   })
 
   app.get('/allRegister', (req, res) => {
+    registerCollection.find({})
+    .toArray((err, documents) => {
+      res.send(documents)
+    })
+  })
+
+  app.get('/allRegister', (req, res) => {
     const bearer = req.headers.authorization;
 
     if(bearer && bearer.startsWith('Bearer ')){
