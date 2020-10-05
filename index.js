@@ -50,7 +50,7 @@ client.connect(err => {
     })
   })
 
-  app.get('/allRegister', (req, res) => {
+  app.get('/allRegistedActivity', (req, res) => {
     registerCollection.find({})
     .toArray((err, documents) => {
       res.send(documents)
