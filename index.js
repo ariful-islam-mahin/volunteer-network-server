@@ -34,7 +34,7 @@ client.connect(err => {
     })
   })
 
-  app.get('/activities', (req, res) => {
+  app.get('/allActivities', (req, res) => {
     activitiesCollection.find({})
     .toArray((err, documents) => {
       res.send(documents)
